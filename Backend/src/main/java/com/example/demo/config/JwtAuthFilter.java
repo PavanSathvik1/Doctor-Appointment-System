@@ -1,8 +1,8 @@
-package com.hms.config;
+package com.example.demo.config;
 
-import com.hms.service.auth.JwtUtil;
 import com.hms.entity.user.User;
 import com.hms.entity.user.UserStatus;
+import com.hms.service.auth.JwtUtil;
 import com.hms.service.user.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

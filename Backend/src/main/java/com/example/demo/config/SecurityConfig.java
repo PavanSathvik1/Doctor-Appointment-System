@@ -1,7 +1,8 @@
-package com.hms.config;
+package com.example.demo.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hms.dto.common.ErrorResponse;
+import com.hms.service.user.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +26,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import com.hms.service.user.CustomUserDetailsService;
 
 import java.time.Instant;
 import java.util.Arrays;
