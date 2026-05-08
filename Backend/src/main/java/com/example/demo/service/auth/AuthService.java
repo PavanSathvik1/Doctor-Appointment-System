@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.example.demo.service.auth;
 
 import com.hms.dto.auth.request.*;
 import com.hms.dto.auth.response.AuthResponse;
