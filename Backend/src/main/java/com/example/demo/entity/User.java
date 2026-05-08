@@ -1,8 +1,8 @@
-package com.hospital.management.entity;
+package com.example.demo.entity;
 
-import com.hospital.management.entity.type.AuthProviderType;
-import com.hospital.management.entity.type.RoleType;
-import com.hospital.management.security.RolePermissionMapping;
+import com.example.demo.entity.type.AuthProviderType;
+import com.example.demo.entity.type.RoleType;
+import com.example.demo.security.RolePermissionMapping;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.*;

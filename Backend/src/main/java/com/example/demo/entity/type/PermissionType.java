@@ -1,4 +1,4 @@
-package com.hospital.management.entity.type;
+package com.example.demo.entity.type;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,7 @@
-package com.hospital.management.repository;
+package com.example.demo.repository;
 
-import com.hospital.management.entity.User;
-import com.hospital.management.entity.type.AuthProviderType;
+import com.example.demo.entity.User;
+import com.example.demo.entity.type.AuthProviderType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

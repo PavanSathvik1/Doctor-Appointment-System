@@ -1,4 +1,4 @@
-package com.hospital.management.entity;
+package com.example.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

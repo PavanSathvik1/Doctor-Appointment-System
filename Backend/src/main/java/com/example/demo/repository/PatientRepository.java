@@ -1,8 +1,8 @@
-package com.hospital.management.repository;
+package com.example.demo.repository;
 
-import com.hospital.management.dto.BloodGroupCountResponseEntity;
-import com.hospital.management.entity.Patient;
-import com.hospital.management.entity.type.BloodGroupType;
+import com.example.demo.dto.BloodGroupCountResponseEntity;
+import com.example.demo.entity.Patient;
+import com.example.demo.entity.type.BloodGroupType;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,7 +40,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     // JPQL DTO projection (GROUP BY)
     @Query("""
-           SELECT new com.hospital.management.dto.BloodGroupCountResponseEntity(
+           SELECT new com.example.demo.dto.BloodGroupCountResponseEntity(
                p.bloodGroup, COUNT(p)
            )
            FROM Patient p

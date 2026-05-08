@@ -1,6 +1,6 @@
-package com.hospital.management.entity;
+package com.example.demo.entity;
 
-import com.hospital.management.entity.type.BloodGroupType;
+import com.example.demo.entity.type.BloodGroupType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

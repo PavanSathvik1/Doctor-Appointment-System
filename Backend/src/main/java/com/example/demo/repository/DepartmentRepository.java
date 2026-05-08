@@ -1,6 +1,6 @@
-package com.hospital.management.repository;
+package com.example.demo.repository;
 
-import com.hospital.management.entity.Department;
+import com.example.demo.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
