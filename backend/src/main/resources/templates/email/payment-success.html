@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Successful</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #7c3aed, #6d28d9); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 26px; }
+        .header p { color: #ddd6fe; margin: 8px 0 0 0; font-size: 14px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .receipt-box { background: #faf5ff; border-radius: 10px; padding: 24px; margin: 24px 0; border: 1px solid #c4b5fd; }
+        .receipt-box h3 { color: #7c3aed; margin: 0 0 16px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .receipt-box table { width: 100%; border-collapse: collapse; }
+        .receipt-box td { padding: 10px 0; color: #475569; font-size: 14px; border-bottom: 1px solid #ede9fe; }
+        .receipt-box td:first-child { font-weight: 600; color: #1e293b; width: 45%; }
+        .receipt-box tr:last-child td { border-bottom: none; }
+        .amount-row td { font-size: 18px !important; color: #7c3aed !important; font-weight: 700 !important; }
+        .notice-box { background: #fffbeb; border-radius: 8px; padding: 16px; margin: 20px 0; border-left: 4px solid #f59e0b; }
+        .notice-box p { margin: 0; color: #92400e; font-size: 14px; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Payment Successful!</h1>
+            <p>Your consultation has been paid and is pending doctor confirmation</p>
+        </div>
+        <div class="content">
+            <h2>Hello <span th:text="${patientName}">Patient</span>,</h2>
+            <p>Your payment was processed successfully. Here is your payment receipt and appointment summary:</p>
+
+            <div class="receipt-box">
+                <h3>🧾 Payment Receipt</h3>
+                <table>
+                    <tr><td>Doctor:</td><td th:text="${doctorName}">Dr. Smith</td></tr>
+                    <tr><td>Appointment:</td><td th:text="${appointmentDate}">May 11, 2026 at 10:00 AM</td></tr>
+                    <tr><td>Payment ID:</td><td th:text="${paymentId}" style="font-family:monospace;font-size:12px;">pay_xxxxx</td></tr>
+                    <tr class="amount-row"><td>Amount Paid:</td><td>₹ <span th:text="${amount}">500</span></td></tr>
+                </table>
+            </div>
+
+            <div class="notice-box">
+                <p>⏳ <strong>Next step:</strong> Your appointment is currently <strong>PENDING</strong> confirmation from the doctor.
+                You will receive another email with your meeting link once the doctor confirms your appointment.</p>
+            </div>
+
+            <p>If you have any questions, please contact our support team.</p>
+        </div>
+        <div class="footer">
+            <p>© 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

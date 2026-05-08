@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Prescription Issued</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #10b981, #059669); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 24px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .btn { display: inline-block; background: #10b981; color: #ffffff; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 20px 0; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 New Prescription Issued</h1>
+        </div>
+        <div class="content">
+            <h2>Hello <span th:text="${patientName}">User</span>,</h2>
+            <p>Your recent appointment with Dr. <span th:text="${doctorName}">Doctor</span> has concluded, and a new digital prescription has been issued for you.</p>
+            <p>You can view the details of your medicines and download the official PDF directly from the HMS portal by clicking the link below.</p>
+            <a th:href="${prescriptionLink}" href="#" class="btn">View Prescription</a>
+            <p>We wish you a swift recovery!</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

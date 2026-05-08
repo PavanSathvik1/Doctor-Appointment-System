@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Update</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #ea580c, #c2410c); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 24px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .reason-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .reason-box p { color: #991b1b; margin: 0; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Application Update</h1>
+        </div>
+        <div class="content">
+            <h2>Dear Dr. <span th:text="${doctorName}">Doctor</span>,</h2>
+            <p>We regret to inform you that your application to join HMS has not been approved at this time.</p>
+            <div class="reason-box">
+                <p><strong>Reason:</strong> <span th:text="${reason}">No reason provided</span></p>
+            </div>
+            <p>If you believe this is an error or would like to resubmit your application with updated documents, please contact our support team.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

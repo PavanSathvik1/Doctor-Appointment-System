@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to HMS</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #059669, #047857); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 24px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .btn { display: inline-block; background: #059669; color: #ffffff; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px; }
+        .features { margin: 25px 0; }
+        .features li { color: #475569; line-height: 2; font-size: 14px; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Welcome to HMS!</h1>
+        </div>
+        <div class="content">
+            <h2>Hello <span th:text="${firstName}">User</span>,</h2>
+            <p>Your email has been verified and your account is now <strong>active</strong>!</p>
+            <p>You can now log in and start using all the features of HMS:</p>
+            <ul class="features">
+                <li>🔍 Search and find doctors by specialisation</li>
+                <li>📅 Book appointments at your convenience</li>
+                <li>💊 View prescriptions and download PDFs</li>
+                <li>🔔 Receive email reminders for your appointments</li>
+            </ul>
+            <a href="http://localhost:3000/login" class="btn">Log In Now</a>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

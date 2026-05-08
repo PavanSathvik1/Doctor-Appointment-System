@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Confirmed</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #059669, #047857); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 24px; }
+        .header p { color: #d1fae5; margin: 8px 0 0 0; font-size: 14px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .details-box { background: #f0fdf4; border-radius: 8px; padding: 20px; margin: 20px 0; border-left: 4px solid #059669; }
+        .details-box table { width: 100%; border-collapse: collapse; }
+        .details-box td { padding: 8px 0; color: #475569; font-size: 14px; }
+        .details-box td:first-child { font-weight: 600; color: #1e293b; width: 40%; }
+        .video-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 10px; padding: 24px; margin: 24px 0; text-align: center; border: 1px solid #93c5fd; }
+        .video-box h3 { color: #1d4ed8; margin: 0 0 8px 0; font-size: 18px; }
+        .video-box p { color: #3b82f6; margin: 0 0 16px 0; font-size: 13px; }
+        .join-btn { display: inline-block; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff !important; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+        .join-btn:hover { background: #1d4ed8; }
+        .link-text { color: #6b7280; font-size: 12px; margin-top: 12px; word-break: break-all; }
+        .offline-box { background: #fafafa; border-radius: 8px; padding: 16px; margin: 20px 0; border: 1px solid #e5e7eb; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Appointment Confirmed</h1>
+            <p th:if="${isOnline}">Your online consultation is ready 💻</p>
+            <p th:unless="${isOnline}">Your in-person visit is confirmed 🏥</p>
+        </div>
+        <div class="content">
+            <h2>Hello <span th:text="${recipientName}">User</span>,</h2>
+            <p>Your appointment has been <strong>confirmed</strong> by the doctor. Here are the full details:</p>
+
+            <div class="details-box">
+                <table>
+                    <tr><td>Doctor:</td><td th:text="${doctorName}">Dr. Smith</td></tr>
+                    <tr><td>Patient:</td><td th:text="${patientName}">John Doe</td></tr>
+                    <tr><td>Date &amp; Time:</td><td th:text="${appointmentDate}">2025-01-15 10:00 AM</td></tr>
+                    <tr><td>Mode:</td>
+                        <td th:if="${isOnline}"><strong style="color:#2563eb;">💻 Online (Video Call)</strong></td>
+                        <td th:unless="${isOnline}"><strong style="color:#059669;">🏥 In-person (Offline)</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- ONLINE: Show Jitsi meeting link -->
+            <div class="video-box" th:if="${isOnline}">
+                <h3>📹 Join Your Video Consultation</h3>
+                <p>Click the button below at your appointment time. No app install needed — works directly in your browser.</p>
+                <a th:href="${meetingLink}" class="join-btn">🚀 Join Video Call</a>
+                <p class="link-text">Or copy this link: <span th:text="${meetingLink}"></span></p>
+            </div>
+
+            <!-- OFFLINE: Show doctor's actual clinic address -->
+            <div class="offline-box" th:unless="${isOnline}">
+                <p style="margin:0;color:#374151;"><strong>📍 Clinic / Hospital Address:</strong></p>
+                <p style="margin:6px 0 0 0;color:#374151;font-size:15px;" th:text="${clinicAddress}">Address not available</p>
+                <p style="margin:8px 0 0 0;color:#6b7280;font-size:13px;">Please arrive 10 minutes early and bring a valid ID.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

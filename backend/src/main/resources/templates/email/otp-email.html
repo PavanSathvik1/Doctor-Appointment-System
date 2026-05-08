@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Your Email</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2563eb, #1d4ed8); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 24px; }
+        .header p { color: #bfdbfe; margin: 5px 0 0; font-size: 14px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .otp-box { background: #f0f9ff; border: 2px dashed #2563eb; border-radius: 8px; padding: 20px; text-align: center; margin: 25px 0; }
+        .otp-code { font-size: 36px; font-weight: 700; color: #1d4ed8; letter-spacing: 8px; font-family: monospace; }
+        .warning { color: #dc2626; font-size: 13px; font-style: italic; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 HMS</h1>
+            <p>Hospital Management System</p>
+        </div>
+        <div class="content">
+            <h2>Hello <span th:text="${firstName}">User</span>,</h2>
+            <p>Thank you for registering with HMS. To complete your registration, please use the following OTP code:</p>
+            <div class="otp-box">
+                <div class="otp-code" th:text="${otp}">123456</div>
+            </div>
+            <p>This code is valid for <strong th:text="${validMinutes}">5</strong> minutes.</p>
+            <p class="warning">If you didn't request this, please ignore this email.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

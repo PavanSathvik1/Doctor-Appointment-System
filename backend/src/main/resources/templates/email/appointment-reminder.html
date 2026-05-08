@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Reminder</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #0284c7, #0369a1); padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 24px; }
+        .content { padding: 40px 30px; }
+        .content h2 { color: #1e293b; font-size: 20px; margin-top: 0; }
+        .content p { color: #475569; line-height: 1.6; font-size: 15px; }
+        .details-box { background: #f0f9ff; border-radius: 8px; padding: 20px; margin: 20px 0; border-left: 4px solid #0284c7; }
+        .details-box table { width: 100%; border-collapse: collapse; }
+        .details-box td { padding: 8px 0; color: #475569; font-size: 14px; }
+        .details-box td:first-child { font-weight: 600; color: #1e293b; width: 40%; }
+        .footer { background: #f8fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { color: #94a3b8; font-size: 12px; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⏰ Appointment Reminder</h1>
+        </div>
+        <div class="content">
+            <h2>Hello <span th:text="${patientName}">User</span>,</h2>
+            <p>This is a friendly reminder for your upcoming appointment scheduled for tomorrow.</p>
+            <div class="details-box">
+                <table>
+                    <tr><td>Doctor:</td><td th:text="${doctorName}">Dr. Smith</td></tr>
+                    <tr><td>Date &amp; Time:</td><td th:text="${appointmentDate}">2025-01-15 10:00 AM</td></tr>
+                </table>
+            </div>
+            <p>Please remember to arrive at least 10 minutes prior to your scheduled time.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 HMS - Hospital Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
